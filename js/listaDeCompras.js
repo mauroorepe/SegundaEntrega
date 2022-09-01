@@ -159,3 +159,32 @@ function createListItem(id, value){
         btnEditar.addEventListener("click", editarPieza);
         lista.appendChild(elemento)
 }
+
+//FETCH
+
+const button = document.querySelector('.button')
+const inputValue = document.querySelector('.inputValue')
+const nombre = document.querySelector('.name')
+const desc = document.querySelector('.desc')
+const temp = document.querySelector('.temp')
+
+button.addEventListener('click', function(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=metric&appid=0ab2457a8ea38eda1ef6ff6dcffde83d')
+    .then(response => response.json())
+    .then(data => {
+        let nameValue = data['name']
+        let tempValue = data ['main']['temp']
+        let descValue = data ['weather'][0]['description']
+
+        nombre.innerHTML = nameValue
+        temp.innerHTML = tempValue + "°C"
+        desc.innerHTML = descValue
+    })
+    
+
+})
+
+/* fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value'&appid=0ab2457a8ea38eda1ef6ff6dcffde83d')
+.then(response => response.json())
+.then(data => console.log(data)) */
+
