@@ -184,7 +184,3 @@ button.addEventListener('click', function(){
 
 })
 
-/* fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value'&appid=0ab2457a8ea38eda1ef6ff6dcffde83d')
-.then(response => response.json())
-.then(data => console.log(data)) */
-
